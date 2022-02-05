@@ -10,13 +10,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mikecoj/Datepicker.git"
+		"url": "git+https://github.com/ilyutkin/Datepicker.git"
 	},
 	"keywords": [],
 	"author": "Mike Cojocari",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/mikecoj/Datepicker/issues"
+		"url": "https://github.com/ilyutkin/Datepicker/issues"
 	},
 	"homepage": "https://mcdatepicker.netlify.app/",
 	"devDependencies": {
