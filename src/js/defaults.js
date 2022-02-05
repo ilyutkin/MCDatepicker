@@ -96,46 +96,56 @@ export const viewLayers = {
 };
 
 export const weekDays = [
-	'Sunday',
-	'Monday',
-	'Tuesday',
-	'Wednesday',
-	'Thursday',
-	'Friday',
-	'Saturday'
+	'Воскресенье',
+	'Понедельник',
+	'Вторник',
+	'Среда',
+	'Четверг',
+	'Пятница',
+	'Суббота'
+];
+
+export const shortWeekDays = [
+	'Вс',
+	'Пн',
+	'Вт',
+	'Ср',
+	'Чт',
+	'Пт',
+	'Сб'
 ];
 
 export const months = [
-	'January',
-	'February',
-	'March',
-	'April',
-	'May',
-	'June',
-	'July',
-	'August',
-	'September',
-	'October',
-	'November',
-	'December'
+	'Январь',
+	'Февраль',
+	'Март',
+	'Апрель',
+	'Май',
+	'Июнь',
+	'Июль',
+	'Август',
+	'Сентябрь',
+	'Октябрь',
+	'Ноябрь',
+	'Декабрь'
 ];
 
 const defaultOptions = {
 	el: null,
 	selector: null,
 	context: null,
-	dateFormat: 'DD-MMM-YYYY',
+	dateFormat: 'DD.MM.YYYY',
 	bodyType: 'modal', // ['modal', 'inline', 'permanent']
-	autoClose: false,
+	autoClose: true,
 	closeOndblclick: true,
-	closeOnBlur: false,
+	closeOnBlur: true,
 	showCalendarDisplay: true,
 	customWeekDays: weekDays,
+	customShortWeekDays: shortWeekDays,
 	customMonths: months,
-	customOkBTN: 'OK',
-	customClearBTN: 'Clear',
-	customCancelBTN: 'CANCEL',
-	firstWeekday: 0, // ex: 1 accept numbers 0-6;
+	customOkBTN: 'Применить',
+	customCancelBTN: 'Отмена',
+	firstWeekday: 1, // ex: 1 accept numbers 0-6;
 	selectedDate: null,
 	minDate: null,
 	maxDate: null,
