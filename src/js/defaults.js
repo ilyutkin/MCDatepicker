@@ -6,13 +6,13 @@ export const defaultEventColorType = [
 ];
 
 export const defaultTheme = {
-	theme_color: '#38ada9',
+	theme_color: '#546ee5',
 	main_background: '#f5f5f6',
 	active_text_color: 'rgb(0, 0, 0)',
 	inactive_text_color: 'rgba(0, 0, 0, 0.2)',
 	display: {
 		foreground: 'rgba(255, 255, 255, 0.8)',
-		background: '#38ada9'
+		background: '#546ee5'
 	},
 	picker: {
 		foreground: 'rgb(0, 0, 0)',
@@ -23,7 +23,7 @@ export const defaultTheme = {
 		inactive: 'rgba(0, 0, 0, 0.2)'
 	},
 	weekday: {
-		foreground: '#38ada9'
+		foreground: '#546ee5'
 	},
 	button: {
 		success: {
@@ -40,7 +40,7 @@ export const defaultTheme = {
 			},
 			picked: {
 				foreground: '#ffffff',
-				background: '#38ada9'
+				background: '#546ee5'
 			},
 			today: {
 				foreground: 'rgb(0, 0, 0)',
@@ -52,8 +52,8 @@ export const defaultTheme = {
 				foreground: 'rgba(0, 0, 0, 0.2)'
 			},
 			picked: {
-				foreground: '#38ada9',
-				background: '#38ada9'
+				foreground: '#546ee5',
+				background: '#546ee5'
 			},
 			today: {
 				foreground: 'rgba(0, 0, 0, 0.2)',
@@ -61,7 +61,7 @@ export const defaultTheme = {
 			}
 		},
 		marcked: {
-			foreground: '#38ada9'
+			foreground: '#546ee5'
 		}
 	},
 	month_year_preview: {
