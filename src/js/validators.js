@@ -180,7 +180,6 @@ const optionsSchema = {
 		);
 	},
 	customOkBTN: (value) => Is(value).string(),
-	customClearBTN: (value) => Is(value).string(),
 	customCancelBTN: (value) => Is(value).string(),
 	firstWeekday: (value) => Is(value).number() && /^[0-6]{1}$/.test(value),
 	selectedDate: (value) => Is(value).date(),

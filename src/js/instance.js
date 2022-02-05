@@ -36,7 +36,6 @@ export default function createInstance(datepicker, calendarNodes, instanceOption
 		onCloseCallbacks: [],
 		onSelectCallbacks: [],
 		onCancelCallbacks: [],
-		onClearCallbacks: [],
 		onMonthChangeCallbacks: [],
 		onYearChangeCallbacks: [],
 		markCustomCallbacks: [],
@@ -67,9 +66,6 @@ export default function createInstance(datepicker, calendarNodes, instanceOption
 		},
 		onCancel(callback) {
 			this.onCancelCallbacks.push(callback);
-		},
-		onClear(callback) {
-			this.onClearCallbacks.push(callback);
 		},
 		onMonthChange(callback) {
 			this.onMonthChangeCallbacks.push(callback);
