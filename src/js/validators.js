@@ -154,7 +154,9 @@ const themeColorSchema = {
 };
 
 const optionsSchema = {
-	el: (value) => /^[#][-\w]+$/.test(value),
+	el: (value) => typeof Node === "object" ? value instanceof Node :
+		value && typeof value === "object" && typeof value.nodeType === "number" && typeof value.nodeName==="string",
+	selector: (value) => /^[#][-\w]+$/.test(value),
 	context: (value) =>
 		value.nodeType == Node.ELEMENT_NODE || value.nodeType == Node.DOCUMENT_FRAGMENT_NODE,
 	dateFormat: (value) => dateFormatValidator(value).isValid(),

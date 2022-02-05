@@ -4,17 +4,21 @@ import { dispatchSetDate } from './emiters';
 import { defaultTheme } from './defaults';
 import { dateFormatParser, Store, uniqueId, themeParser } from './utils';
 import { getActiveMonths, getLimitDates, getViewLayers } from './handlers';
+const moment = require('moment-mini');
 
 export default function createInstance(datepicker, calendarNodes, instanceOptions) {
 	instanceOptions.allowedYears.sort((first, next) => first - next);
-	const linkedElement =
-		instanceOptions.el !== null ? instanceOptions.context.querySelector(instanceOptions.el) : null;
+	var linkedElement = instanceOptions.el;
+	if(instanceOptions.el == null)
+		linkedElement =
+			instanceOptions.selector !== null ? instanceOptions.context.querySelector(instanceOptions.selector) : null;
 	const activeMonths = getActiveMonths(instanceOptions);
 	const { prevLimitDate, nextLimitDate } = getLimitDates(instanceOptions);
 	const viewLayers = getViewLayers(instanceOptions);
 	const store = Store(calendarNodes, viewLayers[0]);
 	const parsedTheme = themeParser(defaultTheme, instanceOptions.theme);
 	instanceOptions.theme = parsedTheme;
+	let momentObj = moment(linkedElement.value, instanceOptions.dateFormat)
 
 	return {
 		_id: uniqueId(),
@@ -22,7 +26,7 @@ export default function createInstance(datepicker, calendarNodes, instanceOption
 		el: instanceOptions.el,
 		context: instanceOptions.context,
 		linkedElement: linkedElement,
-		pickedDate: instanceOptions.selectedDate,
+		pickedDate: momentObj.toDate(),
 		viewLayers: viewLayers,
 		activeMonths: activeMonths,
 		prevLimitDate: prevLimitDate,
