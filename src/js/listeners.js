@@ -56,8 +56,7 @@ export const applyListeners = (calendarNodes) => {
 		dateCells,
 		previewCells,
 		cancelButton,
-		okButton,
-		clearButton
+		okButton
 	} = calendarNodes;
 
 	calendar.addEventListener(CALENDAR_SHOW, (e) => {
@@ -375,7 +374,7 @@ export const applyListeners = (calendarNodes) => {
 		cell.addEventListener('dblclick', (e) => e.detail === 2 && dispatchDatePick(e.target, true));
 		cell.addEventListener('keydown', (e) => {
 			e.key === 'Enter' && dispatchDatePick(e.target);
-			e.key === 'End' && clearButton.focus();
+			e.key === 'End';
 		});
 	});
 
@@ -415,15 +414,6 @@ export const applyListeners = (calendarNodes) => {
 		'click',
 		(e) => activeInstance && updatePickedDateValue(activeInstance, calendarStates)
 	);
-
-	clearButton.addEventListener('click', (e) => {
-		if (!activeInstance) return;
-		const { linkedElement, onClearCallbacks } = activeInstance;
-		dateCells.forEach((cell) => cell.classList.remove('mc-date--picked'));
-		activeInstance.pickedDate = null;
-		if (linkedElement) linkedElement.value = null;
-		onClearCallbacks.forEach((callback) => callback.apply(null));
-	});
 };
 
 export const applyOnFocusListener = (instance) => {

@@ -30,7 +30,6 @@ export const getDOMNodes = (calendar) => {
 		weekdays: calendar.querySelectorAll('.mc-table__weekday'),
 		okButton: calendar.querySelector('#mc-btn__ok'),
 		cancelButton: calendar.querySelector('#mc-btn__cancel'),
-		clearButton: calendar.querySelector('#mc-btn__clear'),
 		dateCells: calendar.querySelectorAll('.mc-date'),
 		monthYearPreview: calendar.querySelector('.mc-month-year__preview'),
 		previewCells: calendar.querySelectorAll('.mc-month-year__cell'),
@@ -234,20 +233,19 @@ export const updateNavs = (calendarNodes, instance) => {
 };
 
 export const updateButtons = (calendarNodes, options) => {
-	const { customOkBTN, customClearBTN, customCancelBTN } = options;
-	const { okButton, clearButton, cancelButton } = calendarNodes;
+	const { customOkBTN, customCancelBTN } = options;
+	const { okButton, cancelButton } = calendarNodes;
 	okButton.innerText = customOkBTN;
-	clearButton.innerText = customClearBTN;
 	cancelButton.innerText = customCancelBTN;
 };
 
 export const updateWeekdays = (calendarNodes, options) => {
 	const { weekdays } = calendarNodes;
-	const { customWeekDays, firstWeekday } = options;
+	const { customShortWeekDays, firstWeekday } = options;
 	weekdays.forEach((wDay, index) => {
-		const nextElement = (firstWeekday + index) % customWeekDays.length;
-		wDay.innerText = customWeekDays[nextElement].substr(0, 2);
-		wDay.setAttribute('aria-label', customWeekDays[nextElement]);
+		const nextElement = (firstWeekday + index) % customShortWeekDays.length;
+		wDay.innerText = customShortWeekDays[nextElement];
+		wDay.setAttribute('aria-label', customShortWeekDays[nextElement]);
 	});
 };
 

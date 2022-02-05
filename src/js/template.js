@@ -138,7 +138,6 @@ export default `<div class="mc-display" data-target="calendar">
 </div>
 <div class="mc-picker__footer mc-container">
 <div class="mc-footer__section mc-footer__section--primary">
-<button id="mc-btn__clear" class="mc-btn mc-btn--danger" tabindex="0">Clear</button>
 </div>
 <div class="mc-footer__section mc-footer__section--secondary">
 <button id="mc-btn__cancel" class="mc-btn mc-btn--success" tabindex="0">CANCEL</button>
