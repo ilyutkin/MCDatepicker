@@ -4,7 +4,7 @@ import { dispatchSetDate } from './emiters';
 import { defaultTheme } from './defaults';
 import { dateFormatParser, Store, uniqueId, themeParser } from './utils';
 import { getActiveMonths, getLimitDates, getViewLayers } from './handlers';
-const moment = require('moment-mini');
+import moment from 'moment-mini';
 
 export default function createInstance(datepicker, calendarNodes, instanceOptions) {
 	instanceOptions.allowedYears.sort((first, next) => first - next);
