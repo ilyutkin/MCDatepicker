@@ -18,7 +18,9 @@ export default function createInstance(datepicker, calendarNodes, instanceOption
 	const store = Store(calendarNodes, viewLayers[0]);
 	const parsedTheme = themeParser(defaultTheme, instanceOptions.theme);
 	instanceOptions.theme = parsedTheme;
-	let momentObj = moment(linkedElement.value, instanceOptions.dateFormat)
+	let momentObj = moment();
+	if((linkedElement != null) && (linkedElement.value != ''))
+		momentObj = moment(linkedElement.value, instanceOptions.dateFormat);
 
 	return {
 		_id: uniqueId(),
